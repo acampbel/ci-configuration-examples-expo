@@ -26,7 +26,7 @@ else
 end
 
 % Initialize the days per month
-daysPerMonth = [31,30,31,30,31,30,31,31,30,31,30,31];
+daysPerMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
 
 % Check for leap year
 if mod(d.Year,4) == 0
