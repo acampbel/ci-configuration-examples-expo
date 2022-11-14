@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, windows-latest]
-        release: [r2022b, r2022bLatest]
+        release: [R2022a, R2022bLatest]
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
