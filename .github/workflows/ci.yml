@@ -44,7 +44,8 @@ jobs:
         with: 
           release: ${{matrix.release}}
           
-      - name: Set MATLAB as topmost on system path
+      - if: ${{ steps.cache-matlab.outputs.cache-hit == 'true' }}
+        name: Set MATLAB as topmost on system path
         run: echo "${{ runner.tool_cache }}/MATLAB/9.13.0/x64" >> $GITHUB_PATH
             
       # Runs a set of commands using the runners shell
