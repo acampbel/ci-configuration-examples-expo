@@ -45,14 +45,20 @@ jobs:
           release: ${{matrix.release}}
           
       - if: steps.cache-matlab.outputs.cache-hit == 'true'
-        name: Set MATLAB as topmost on system path
-        run: |
-          echo "${{ runner.tool_cache }}/MATLAB/9.13.0/x64/bin" >> $GITHUB_PATH
-          curl -sfL https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/install.sh | bash -s --
+        name: Install matlab-batch
+        run: curl -sfL https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/install.sh | bash -s --
+          
+          
+      - if: steps.cache-matlab.outputs.cache-hit == 'true' && runner.os != 'Windows'
+        name: Setup paths for unix
+        run: echo "${{ runner.tool_cache }}/MATLAB/9.13.0/x64/bin" >> $GITHUB_PATH
+
           
       - if: steps.cache-matlab.outputs.cache-hit == 'true' && runner.os == 'Windows'
-        name: Install matlab-batch
-        run: echo "C:\Program Files\matlab-batch" >> $GITHUB_PATH
+        name: Setup paths for Windows
+        run: |
+          echo "C:\Program Files\matlab-batch" >> $GITHUB_PATH
+          echo "${{ runner.tool_cache }}\MATLAB\9.13.0\x64\bin" >> $GITHUB_PATH
 
 
       # Runs a set of commands using the runners shell
