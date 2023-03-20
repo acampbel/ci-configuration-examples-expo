@@ -18,8 +18,8 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [ubuntu-latest, windows-latest]
-        release: [latest]
+        platform: [ubuntu-latest, windows-latest, maci-latest]
+        release: [R2022b, latest]
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
