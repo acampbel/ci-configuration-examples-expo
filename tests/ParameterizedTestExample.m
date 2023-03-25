@@ -14,6 +14,7 @@ classdef ParameterizedTestExample < matlab.unittest.TestCase
             % Convert numeric values to mm/dd/yyyy string
             % Note: MATLAB will automatically convert numbers to strings
             % when performing number+string arithmetic
+	    pause(rand);
             dateStr = monthNum + "/" + dayNum + "/" + yearNum;
             
             % Compute expected result
