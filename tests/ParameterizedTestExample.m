@@ -5,8 +5,8 @@ classdef ParameterizedTestExample < matlab.unittest.TestCase
 	
     properties (TestParameter)
         monthNum = num2cell(1:12);
-        dayNum = {1,15,28};
-        yearNum = {1970, 2000, 2023, 2050};
+        dayNum = {1, 10, 15, 20, 28};
+        yearNum = {1970, 2000, 2015, 2023, 2050};
     end
     
     methods (Test)
