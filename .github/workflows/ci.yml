@@ -18,7 +18,6 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [ubuntu-latest]
         release: 
           - R2020a
           - R2020b
@@ -28,7 +27,7 @@ jobs:
           - R2023a
         
     # The type of runner that the job will run on
-    runs-on: ${{matrix.platform}}
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
