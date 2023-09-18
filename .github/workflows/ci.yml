@@ -26,7 +26,6 @@ jobs:
           - R2021b
           - R2022a
           - R2023a
-          - R2023b
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
