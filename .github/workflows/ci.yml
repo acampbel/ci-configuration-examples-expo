@@ -12,14 +12,15 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+env:
+  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs:
   # This workflow contains a single job called "build"
   build:
     strategy:
       matrix:
         platform: [ubuntu-latest, windows-latest, macos-latest]
-        release: [R2020b, R2021a, R2021b, R2022a, R2022b, R2023a, R2023b]
+        release: [R2021a, R2021b, R2022a, R2022b, R2023a]
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
