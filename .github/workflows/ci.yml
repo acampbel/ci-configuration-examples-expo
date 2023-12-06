@@ -40,7 +40,7 @@ jobs:
         id: cache-sp
         uses: actions/cache@v3
         with:
-          path: ${{ HOME }}/Documents/MATLAB
+          path: $HOME/Documents/MATLAB
           key: ${{ matrix.platform }}
 
       # Sets up MATLAB on the GitHub Actions runner
