@@ -35,7 +35,6 @@ jobs:
         uses: matlab-actions/setup-matlab@v2-rc0
         with: 
           release: ${{matrix.release}}
-          cache: true
           products: |
             Statistics_and_Machine_Learning_Toolbox
             Simulink
