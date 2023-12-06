@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, windows-latest, macos-latest]
-        release: [R2023b]
+        release: [R2022b, R2023b]
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
@@ -47,7 +47,7 @@ jobs:
       - name: Check MATLAB Install
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: ver, which('runprocess')
+          command: ver, disp(which('createprocess'))
           
       # Runs a set of commands using the runners shell
       - name: Run all tests
