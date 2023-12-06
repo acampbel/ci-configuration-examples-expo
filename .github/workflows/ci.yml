@@ -14,6 +14,7 @@ on:
   workflow_dispatch:
 env:
   MATHWORKS_LICENSING_ENDPOINT: stage
+  
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -35,12 +36,15 @@ jobs:
         
       - name: Look inside $HOME
         run: ls $HOME
+
+      - name: Store $HOME
+        run: echo "GH_HOME=$HOME" >> $GITHUB_ENV
         
       - name: Cache Support Packages
         id: cache-sp
         uses: actions/cache@v3
         with:
-          path: ${{ env.home }}/Documents/MATLAB
+          path: ${{ env.GH_HOME }}/Documents/MATLAB
           key: matlab-sp-${{ matrix.platform }}-${{ matrix.release }}
 
       # Sets up MATLAB on the GitHub Actions runner
