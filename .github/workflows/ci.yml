@@ -56,6 +56,9 @@ jobs:
             Simulink_Check
             CI/CD_Automation_for_Simulink_Check
 
+      - name: Look inside $HOME
+        run: ls $HOME
+
       # Runs a set of commands using the runners shell
       - name: Check MATLAB Install
         uses: matlab-actions/run-command@v2-rc0
