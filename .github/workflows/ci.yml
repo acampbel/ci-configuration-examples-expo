@@ -36,13 +36,19 @@ jobs:
       - name: Look inside $HOME
         run: ls $HOME
         
-        
+      - name: Cache Support Packages
+        id: cache-sp
+        uses: actions/cache@v3
+        with:
+          path: ${{ HOME }}/Documents/MATLAB
+          key: ${{ matrix.platform }}
 
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2-rc0
         with: 
           release: ${{matrix.release}}
+          cache: true
           products: |
             Statistics_and_Machine_Learning_Toolbox
             Simulink
