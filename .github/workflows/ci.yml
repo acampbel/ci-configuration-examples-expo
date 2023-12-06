@@ -40,7 +40,7 @@ jobs:
         id: cache-sp
         uses: actions/cache@v3
         with:
-          path: ${{ env.HOME }}/Documents/MATLAB
+          path: ${{ env.home }}/Documents/MATLAB
           key: matlab-sp-${{ matrix.platform }}-${{ matrix.release }}
 
       # Sets up MATLAB on the GitHub Actions runner
@@ -63,7 +63,7 @@ jobs:
       - name: Check MATLAB Install
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: ver, which('runprocess'), disp(getenv('home'))
+          command: ver, which('runprocess'), disp(getenv('HOME'))
           
       # Runs a set of commands using the runners shell
       - name: Run all tests
