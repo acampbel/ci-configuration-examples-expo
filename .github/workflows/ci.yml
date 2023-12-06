@@ -31,12 +31,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Find $HOME
-        run: echo $HOME
-        
-      - name: Look inside $HOME
-        run: ls $HOME
-
       - name: Store $HOME
         run: echo "GH_HOME=$HOME" >> $GITHUB_ENV
         
