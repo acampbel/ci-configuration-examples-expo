@@ -31,11 +31,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Check disks
-        run: dir C:\
+      - name: Check C:\
+        run: fsutil volume diskfree c:
 
-      - name: Check disks
-        run: dir D:\
+      - name: Check D:\
+        run: fsutil volume diskfree d:
       
       
       # Sets up MATLAB on the GitHub Actions runner
