@@ -31,6 +31,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: Check disks
+        run: dir C:\
+
+      - name: Check disks
+        run: dir D:\
+      
+      
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2-rc0
