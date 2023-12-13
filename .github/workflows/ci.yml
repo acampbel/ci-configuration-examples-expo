@@ -36,13 +36,13 @@ jobs:
 
 
       - name: Change folder
-        run: cd code
+        run: cd code; pwd
         
       - name: Check folder
         run: pwd
 
       - name: Check folder
-        run: cd ..
+        run: cd ..;pwd
         
       - name: Cache Support Packages
         id: cache-sp
