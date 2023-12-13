@@ -33,6 +33,16 @@ jobs:
 
       - name: Store $HOME
         run: echo "GH_HOME=$HOME" >> $GITHUB_ENV
+
+
+      - name: Change folder
+        run: cd code
+        
+      - name: Check folder
+        run: pwd
+
+      - name: Check folder
+        run: cd ..
         
       - name: Cache Support Packages
         id: cache-sp
