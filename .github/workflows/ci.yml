@@ -31,10 +31,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Check C:\
+      - name: Check C drive
         run: fsutil volume diskfree c:
 
-      - name: Check D:\
+      - name: Check D drive
         run: fsutil volume diskfree d:
       
       
