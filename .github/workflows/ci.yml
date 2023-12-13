@@ -31,26 +31,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Store $HOME
-        run: echo "GH_HOME=$HOME" >> $GITHUB_ENV
-
-
-      - name: Change folder
-        run: cd code; pwd
-        
-      - name: Check folder
-        run: pwd
-
-      - name: Check folder
-        run: cd ..;pwd
-        
-      - name: Cache Support Packages
-        id: cache-sp
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.GH_HOME }}/Documents/MATLAB
-          key: matlab-sp-${{ matrix.platform }}-${{ matrix.release }}
-
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2-rc0
@@ -64,14 +44,11 @@ jobs:
             Simulink_Check
             CI/CD_Automation_for_Simulink_Check
 
-      - name: Look inside $HOME
-        run: ls $HOME
-
       # Runs a set of commands using the runners shell
       - name: Check MATLAB Install
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: ver, which('runprocess'), disp(getenv('HOME'))
+          command: ver, which('runprocess')
           
       # Runs a set of commands using the runners shell
       - name: Run all tests
