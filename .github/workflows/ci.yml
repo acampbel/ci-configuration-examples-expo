@@ -32,10 +32,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check C drive
-        run: fsutil volume diskfree c:
+        run: "fsutil volume diskfree c:"
 
       - name: Check D drive
-        run: fsutil volume diskfree d:
+        run: "fsutil volume diskfree d:"
       
       
       # Sets up MATLAB on the GitHub Actions runner
