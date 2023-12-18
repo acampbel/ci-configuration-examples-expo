@@ -20,7 +20,7 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [windows-latest] #ubuntu-latest, windows-latest, macos-latest]
+        platform: [ubuntu-latest, windows-latest, macos-latest]
         release: [R2022b, R2023b]
         
     # The type of runner that the job will run on
