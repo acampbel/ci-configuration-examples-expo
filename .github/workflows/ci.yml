@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron:  '33/61 6/23 3/8 * *' # schedule a build every day-ish
+    - cron:  '33/59 6/24 3/7 * *' # schedule a build every week-ish
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
