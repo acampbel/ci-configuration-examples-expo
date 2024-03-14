@@ -53,16 +53,14 @@ jobs:
         with: 
           release: ${{matrix.release}}
           products: |
+            MATLAB
             Statistics_and_Machine_Learning_Toolbox
-            Simulink
-            Simulink_Test
-            Simulink_Check
 
       # Runs a set of commands using the runners shell
       - name: Check MATLAB Install
         uses: matlab-actions/run-command@v2
         with:
-          command: ver, which('runprocess')
+          command: ver
           
       # Runs a set of commands using the runners shell
       - name: Run all tests
