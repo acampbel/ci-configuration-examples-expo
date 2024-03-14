@@ -20,8 +20,24 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [ubuntu-latest, windows-latest, macos-latest]
-        release: [R2022b, R2023a, R2023b]
+        platform: [ubuntu-latest, windows-latest, macos-13, macos-14] # Runs on 4 major platforms
+        release: [R2020b, R2021a, R2021b, R2022a, R2022b, R2023a, R2023b] # Runs on an array of releases. Can also pin to updates
+        exclude:
+          - platform: windows-latest
+            release: R2020b # Earliest windows release is R2021a
+          - platform: macos-14
+            release: R2020b # Earliest Apple Silicon release is R2023b
+          - platform: macos-14
+            release: R2021a # Earliest Apple Silicon release is R2023b
+          - platform: macos-14
+            release: R2021b # Earliest Apple Silicon release is R2023b
+          - platform: macos-14
+            release: R2022a # Earliest Apple Silicon release is R2023b
+          - platform: macos-14
+            release: R2022b # Earliest Apple Silicon release is R2023b 
+          - platform: macos-14
+            release: R2023a # Earliest Apple Silicon release is R2023b 
+        
         
     # The type of runner that the job will run on
     runs-on: ${{matrix.platform}}
