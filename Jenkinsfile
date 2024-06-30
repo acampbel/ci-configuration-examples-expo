@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+       matlab 'R2024b Prerelease'
+  }
   stages {
     stage('Run MATLAB Tests') {
       steps {
